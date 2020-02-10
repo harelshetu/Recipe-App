@@ -1,0 +1,26 @@
+<%- include ('includes/head.ejs') %>
+<br>
+<div class="container">
+    <div class="row" >
+        <% for(let i=0; i <recipes.length;i++){ %>
+        <div class="col-sm-3" style="padding: 10px"  >
+            <div class="card" style="max-height: 280px; ">
+                <img class="card-img-top"
+                    src="https://images.daznservices.com/di/library/GOAL/2/77/lionel-messi-argetina-2019_qp1tf6mshhhmzl93yqliee7w.jpg?t=1592912031&quality=100">
+                <div class="card-body">
+                    <h5 class="card-title"><strong><%=recipes[i].title%> %></strong></h5>
+                    <% if (recipes[i].description.length > 24) {%>
+                    <p class="card-text"> <%=recipes[i].description.substring(0,24)+'...'%></p>
+                    <%} else {%>
+                    <p class="card-text"><%=recipes[i].description%> %></p>
+                    <%}%>
+                    <p class="card-text" style="font-size: 11px;"><strong>By <%=recipes[i].author%></strong></p>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>
+</div>
+</body>
+
+</html>

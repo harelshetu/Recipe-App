@@ -1,0 +1,23 @@
+<%- include ('includes/head.ejs')%>
+<div class="container">
+    <%if (searchResult) {%>
+        <div class="row" >
+          <% for(let i=0; i <searchResult.length;i++){ %> 
+              <div class="card mx-auto" style="width: 24rem; border: 2px solid #ccc;">
+               <img src=<%=searchResult[i].image%> class="card-img-top" alt="recipe image"
+                  height="250px"/>
+                <div class="card-body">
+                  <h5 class="card-title"><%=searchResult[i].title%></h5>
+                  <p class="card-text"><%=searchResult[i].description%></p>            
+                </div>
+                <p class="mx-auto">By <%=searchResult[i].author%></p>
+              </div>
+            </div> 
+          <%}%>
+    <%}else {%>
+        <div class="alert alert-dark" role="alert">
+            <p><%searchResult%></p>
+        </div>
+    <%}%>  
+</body>
+</html>
